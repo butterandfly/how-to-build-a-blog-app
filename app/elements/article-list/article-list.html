@@ -9,6 +9,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html"/>
 
 <dom-module id="article-list">
   <style>
@@ -18,6 +19,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </style>
   <template>
     <div>
+      <iron-ajax auto url="../../data/articleList.json" last-response="{{articles}}"></iron-ajax>
       <template is="dom-repeat" items="{{articles}}">
         <paper-item>
           <a href="#">
@@ -40,14 +42,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           value: null,
           notify: true
         }
-      },
-
-      ready: function() {
-        this.articles = [
-          {"title":"Article 1","createDate":"2015-05-29"},
-          {"title":"文章 2","createDate":"2015-05-20"}
-        ];
       }
+
     });
   })();
 </script>
