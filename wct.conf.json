@@ -1,3 +1,6 @@
 {
-  "suites": ["app/test"]
+  "suites": ["app/test"],
+  "local": {
+    "browsers": ["firefox"]
+  }
 }
