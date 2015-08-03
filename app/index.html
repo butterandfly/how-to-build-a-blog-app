@@ -58,8 +58,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <body unresolved class="fullbleed layout vertical">
   <span id="browser-sync-binding"></span>
   <template is="dom-bind" id="app">
+    <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
-    <article-list></article-list>
+      <section data-route="home">
+        <article-list></article-list>
+      </section>
+
+      <section data-route="article">
+        <h1>Article Page</h1>
+      </section>
+    </iron-pages>
 
     <paper-toast id="caching-complete"
                  duration="6000"
